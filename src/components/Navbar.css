@@ -1,0 +1,211 @@
+.navbar-main {
+  background-color: #564575;
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.navbar-main-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.navbar-main-header {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-main-logo {
+  width: 12rem;
+  margin-right: 1rem;
+}
+
+.navbar-main-links {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2rem;
+}
+
+.navbar-main-links li {
+  margin: 0 1rem;
+}
+
+.navbar-main-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.navbar-main-links a:hover {
+  color: lavender;
+}
+
+.navbar-main-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-main-btn {
+  margin-left: 1rem;
+  padding: 8px 16px;
+  font-size: 1rem;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-main-btn:hover {
+  background-color: #ffffff;
+  color: #564575;
+}
+
+.navbar-main-login {
+  margin-right: 0.5rem;
+}
+
+.navbar-main-user {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-main-welcome {
+  margin-right: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px; /* Adjust based on available space */
+  white-space: nowrap;
+}
+
+/* Media Query for 959x918 viewport */
+@media (max-width: 959px) {
+  .navbar-main{
+    /* min-width: 220px; */
+    max-width: 1000px;
+  }
+
+  /* .navbar-main-center {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-main-links {
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  .navbar-main-links li {
+    margin: 0.5rem 0;
+  }
+
+  .navbar-main-buttons {
+    margin-top: 1rem;
+  }
+
+  .navbar-main-user {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .navbar-main-welcome {
+    margin: 0.5rem 0;
+  } */
+}
+.hamburger {
+  display: none; /* Initially hide for larger screens */
+  cursor: pointer;
+  z-index: 11;
+}
+
+@media (max-width: 959px) {
+  .hamburger {
+    display: block; /* Display for smaller screens */
+  }
+
+  .navbar-main-links {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
+    position: absolute;
+    top: 7rem; /* Adjust based on your navbar height */
+    left: 0;
+    width: 100%;
+    background-color: #564575;
+    padding: 1rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .navbar-main-links.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navbar-main-links li {
+    margin: 1rem 0;
+  }
+
+  .navbar-main-buttons {
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .navbar-main-buttons.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@media screen and (max-width: 1040px) {
+  .nav-menu {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh; /* Use 100vh to cover the entire viewport height */
+      background: rgba(0, 0, 0, 0.9);
+      position: absolute;
+      top: 0;
+      left: -100%;
+      z-index: -3;
+      transition: 0.3s;
+  }
+
+  .nav-menu.active {
+      left: 0;
+      z-index: 9; /* Bring it above other elements when active */
+  }
+
+  .nav-menu li {
+      padding: 1rem 0;
+  }
+
+  .nav-menu li a {
+      font-size: 2rem;
+  }
+
+  .hamburger {
+      display: block; /* Use block for more control */
+      cursor: pointer; /* Add cursor pointer for better UX */
+      z-index: 11; /* Ensure the hamburger menu is above other elements */
+  }
+}
