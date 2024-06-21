@@ -4,15 +4,15 @@ import Home from './pages/Home';
 import About from './pages/About';
 import SingleCocktail from './pages/SingleCocktail';
 import Error from './pages/Error';
-import Navbar from './components/Navbar';
+// import Navbar from './components/Navbar';
 import Welcome from './pages/Welcome';
 import ProtectedRoute from './components/ProtectedRoute';
 import Footer from './components/Footer';
 function App() {
   return (
-    <>
+   <div>
     <Router>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="container">
         <Routes>
           <Route path="/" element={<Welcome />} />
@@ -23,8 +23,8 @@ function App() {
         </Routes>
       </div>
     </Router>
-    {/* <Footer/> */}
-    </>
+    <Footer/>
+    </div>
   );
 }
 

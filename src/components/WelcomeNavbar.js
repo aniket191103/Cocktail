@@ -4,6 +4,7 @@ import logo from '../logo.png';
 import { useAuth0 } from '@auth0/auth0-react';
 import { FaBars, FaTimes, FaUser } from "react-icons/fa";
 import SearchForm from './SearchForm';
+import './NavbarWelcome.css';
 import { IoLogOut } from "react-icons/io5";
 
 export default function Navbar(props) {
@@ -21,16 +22,9 @@ export default function Navbar(props) {
           <Link to='/'>
             <img src={logo} alt='cocktail db logo' className='navbar-logo' />
           </Link>
-          <div className='hamburger' onClick={handleMenuClick}>
-            {menuOpen? (
-              <FaTimes size={20} style={{ color: "#fff" }} />
-            ) : (
-              <FaBars size={20} style={{ color: "#fff" }} />
-            )}
-          </div>
         </div>
 
-        <ul className={`navbar-links ${menuOpen? 'active' : ''}`}>
+        {/* <ul className={`navbar-links ${menuOpen ? 'active' : ''}`}>
           <li>
             <Link to='/' onClick={handleMenuClick}>{props.Home}</Link>
           </li>
@@ -39,16 +33,16 @@ export default function Navbar(props) {
           </li>
         </ul>
 
-        <SearchForm />
+        {props.SearchForm} */}
 
-        <div className={`navbar-buttons ${menuOpen? 'active' : ''}`}>
-          {!isAuthenticated? (
+        <div className={`navbar-buttons ${menuOpen ? 'active' : ''}`}>
+          {!isAuthenticated ? (
             <button className='navbar-btn' onClick={() => loginWithRedirect()}>
               <FaUser className='navbar-login' size='25px' />
             </button>
           ) : (
             <div className='navbar-user'>
-              <span className='navbar-welcome'>{user.name? `Welcome, ${user.name}!` : 'Welcome!'}</span>
+              <span className='navbar-welcome'>{user.name ? `Welcome, ${user.name}!` : 'Welcome!'}</span>
               <button className='navbar-btn' onClick={() => logout({ returnTo: window.location.origin })}>
                 <IoLogOut className='logout-btn-fa' size="33px"/>
               </button>

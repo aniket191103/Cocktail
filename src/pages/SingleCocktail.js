@@ -1,7 +1,7 @@
 import React from 'react';
 import Loading from '../components/Loading';
 import { useParams, Link } from 'react-router-dom';
-
+import Navbar from '../components/Navbar';
 export default function SingleCocktail() {
   const { id } = useParams();
   const [loading, setLoading] = React.useState(false);
@@ -72,7 +72,10 @@ export default function SingleCocktail() {
       instructions,
       ingredients,
     } = cocktail;
-    return (
+    return (<>
+        <Navbar
+        Home="Home"
+        About="About"/>
       <section className="section cocktail-section">
         <Link to="/" className="btn btn-primary">
           back home
@@ -105,6 +108,7 @@ export default function SingleCocktail() {
           </div>
         </div>
       </section>
+              </>
     );
   }
 }
